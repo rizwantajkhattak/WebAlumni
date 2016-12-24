@@ -34,5 +34,35 @@ class Login extends CI_Controller
         $this->session->unset_userdata($data);
         redirect('home');
     }
+	public function signup() {
+         if($_POST) {
+			 
+			 $firstname = $this->input->post('firstname');
+			 $lastname = $this->input->post('lastname');
+			 $email = $this->input->post('email');
+			 $telephone = $this->input->post('telephone');
+			 $lastname = $this->input->post('lastname');
+			 $lastname = $this->input->post('lastname');
+			 $lastname = $this->input->post('lastname');
+			 $lastname = $this->input->post('lastname');
+			 $lastname = $this->input->post('lastname');
+			 $lastname = $this->input->post('lastname');
+			 $lastname = $this->input->post('lastname');
+			 $lastname = $this->input->post('lastname');
+			 $lastname = $this->input->post('lastname');
+			 $lastname = $this->input->post('lastname');
+			 $lastname = $this->input->post('lastname');
+			 $lastname = $this->input->post('lastname');
+			 $lastname = $this->input->post('lastname');
+			 $lastname = $this->input->post('lastname');
+			 $lastname = $this->input->post('lastname');
+			 $lastname = $this->input->post('lastname');
+			 $lastname = $this->input->post('lastname');
+			 echo "Ok";
+			 exit;
+		}
+		$this->load->view("signup_view");
+    }
+	
 
 }

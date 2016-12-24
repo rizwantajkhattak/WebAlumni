@@ -64,6 +64,13 @@ $this->load->view('common/navbar');
             </div>
         </div>
         <div id="sidebar" class="col-lg-3 col-md-4 col-sm-5 sidebar-offcanvas">
+        	<div class="panel panel-default">
+                <div class="panel-heading"><strong>Not a Member ?</strong></div>
+                <div class="panel-body">
+                    
+					<a class="btn btn-default" href="<?=base_url();?>login/signup" role="button">Sign Up</a>
+                </div>
+            </div>
             <div class="panel panel-default">
                 <div class="panel-heading"><strong>Latest Alumni News</strong></div>
                 <div class="panel-body">
