@@ -5,11 +5,15 @@ $this->load->view('common/navbar');
 <div class="container paddingT75">
     <div class="row">
         <div class="col-lg-12">
-            <h2 class="text-center login-title">Sign in</h2>
+            <h2 class="text-center login-title pull-left" style="margin-bottom:10px;">Sign Up</h2>
             <br>
             <div class="account-wall">
-                <div class="col-md-12 login_error"><?php echo $this->session->flashdata('login_fail'); ?></div>
+                <div class="col-md-12 login_error"><?php echo $this->session->flashdata('signup_fail'); ?></div>
                 <form role="form" method="post" action="<?=base_url();?>login/signup">
+                    <div class="form-group col-md-12">
+                        <input type="text" class="form-control custom-text" name="registration_num" id="name" placeholder="Your CQU Registration Number *" required>
+                    </div>
+                    
                     <div class="form-group col-md-6">
                         <input type="text" class="form-control custom-text" name="firstname" id="name" placeholder="Your Name *" required>
                     </div>
@@ -20,7 +24,7 @@ $this->load->view('common/navbar');
                         <input type="email" class="form-control custom-text" name="email" id="email" placeholder="Your Email *" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <input type="email" class="form-control custom-text" name="telephone" id="email" placeholder="Your Telephone *" required>
+                        <input type="number" class="form-control custom-text" name="telephone" id="email" placeholder="Your Telephone *" required>
                     </div>
                     <div class="form-group col-md-12">
                         <h2 class="contact-subheading">Your CQU experience</h2>

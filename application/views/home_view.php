@@ -72,6 +72,32 @@ $this->load->view('common/navbar');
                 </div>
             </div>
             <div class="panel panel-default">
+                <div class="panel-heading"><strong>Search a Student</strong></div>
+                <div class="panel-body">
+                    
+					<div class="input-group col-md-10">
+                    
+                                <form class="form-horizontal" role="form" action="<?=base_url();?>search">
+                                  <div class="form-group">
+                                    <label for="filter">Filter by</label>
+                                    <select class="form-control" name="filterby">
+                                        <option value="name" selected>Name</option>
+                                        <option value="number">Registration Number</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="contain">Contains the words</label>
+                                    <input class="form-control" type="text" name="keyword" />
+                                  </div>
+                                  <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                </form>
+                    
+                </div>
+                </div>
+            </div>
+            
+            
+            <div class="panel panel-default">
                 <div class="panel-heading"><strong>Latest Alumni News</strong></div>
                 <div class="panel-body">
                     <?php for ($i = 0; $i < count($news); ++$i) { ?>

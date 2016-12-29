@@ -36,30 +36,40 @@ class Login extends CI_Controller
     }
 	public function signup() {
          if($_POST) {
+			 if($this->input->post('password')!= $this->input->post('cpassword')){
+				 $this->session->set_flashdata('signup_fail', 'Password does not match!');
+				 redirect('login/signup');	 
+			}
+			//check existing user
+			 $registration_num 	= $this->input->post('registration_num');
 			 
-			 $firstname = $this->input->post('firstname');
-			 $lastname = $this->input->post('lastname');
-			 $email = $this->input->post('email');
-			 $telephone = $this->input->post('telephone');
-			 $lastname = $this->input->post('lastname');
-			 $lastname = $this->input->post('lastname');
-			 $lastname = $this->input->post('lastname');
-			 $lastname = $this->input->post('lastname');
-			 $lastname = $this->input->post('lastname');
-			 $lastname = $this->input->post('lastname');
-			 $lastname = $this->input->post('lastname');
-			 $lastname = $this->input->post('lastname');
-			 $lastname = $this->input->post('lastname');
-			 $lastname = $this->input->post('lastname');
-			 $lastname = $this->input->post('lastname');
-			 $lastname = $this->input->post('lastname');
-			 $lastname = $this->input->post('lastname');
-			 $lastname = $this->input->post('lastname');
-			 $lastname = $this->input->post('lastname');
-			 $lastname = $this->input->post('lastname');
-			 $lastname = $this->input->post('lastname');
-			 echo "Ok";
-			 exit;
+			 if($this->login->check_user($registration_num) > 0){
+				 $this->session->set_flashdata('signup_fail', 'User Name already exists!');
+				 redirect('login/signup');
+			}
+			$firstname 		= $this->input->post('firstname');
+			$lastname 		= $this->input->post('lastname');
+			$email 			= $this->input->post('email');
+			$telephone 		= $this->input->post('telephone');
+			$studied 		= $this->input->post('studied');
+			$come 			= $this->input->post('come');
+			$company 		= $this->input->post('company');
+			$address 		= $this->input->post('address');
+			$addresstwo 	= $this->input->post('addresstwo');
+			$city 			= $this->input->post('city');
+			$country_id 	= $this->input->post('country_id');
+			$password 		= sha1($this->input->post('password'));
+			
+			 
+			$data = array('username' => $registration_num,'password' => $password,'role' => 'user');
+			$this->login->add_user($data);
+			$data2 = array('student_id'=>$registration_num,'full_name' => $firstname." ".$lastname,'email' => $email,'mobile' => $telephone,'organization' => $company,'location' => $address." ".$addresstwo,'district' => $city,'country' => $country_id
+        );
+		$this->login->add_userinfo($data2);
+			
+			
+			$this->session->set_flashdata('signup_fail', 'Signup Successfully!');
+			 
 		}
 		$this->load->view("signup_view");
     }
