@@ -19,14 +19,20 @@ class Search extends CI_Controller
 		
 		$filterby 		= $this->input->post('filterby');
 		$keyword 		= $this->input->post('keyword');
-		$data['all_student'] = $this->search_model->searchStudent($filterby,$keyword);
 		
-		$config['base_url'] = base_url().'search';
-		$config['total_rows'] = count($data['all_student']);
+		
+		$config['base_url'] = base_url().'search/';
+		$config['total_rows'] = count(@$data['all_student']);
 		$config['per_page'] = 10;
-		
+		$config['uri_segment'] = '2'; 
+		$start = ($this->uri->segment(2)) ? $this->uri->segment(2) : 0;
+		$limit = $config["per_page"];
 		$this->pagination->initialize($config);
-
+		
+		$data["pagination_links"] = $this->pagination->create_links();
+		$data['all_student'] = $this->search_model->searchStudent($filterby,$keyword,$start,$limit);
+		//echo $this->pagination->create_links();
+		//exit;
 		
 		
 		

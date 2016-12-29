@@ -56,7 +56,7 @@ $this->load->view('common/navbar');
                         </div>
                     </div>
                 <?php }
-				echo $this->pagination->create_links();
+				echo $pagination_links;
 				 ?>
             </div>
             <!--end block-->
