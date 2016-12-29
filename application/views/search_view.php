@@ -8,7 +8,7 @@ $this->load->view('common/navbar');
             <h3>Alumni Students</h3>
             <div class="pad10"><div
                 <div class="row">
-                    <form method="post" action="<?=base_url();?>postgrad_alumni/alumniByPassingYear">
+                    <form method="post" action="<?=base_url();?>search">
                         <div class="form-group col-md-2">
                             <label for="passing_year">Filter By</label>
                             <select class="form-control" name="filterby">
@@ -55,7 +55,9 @@ $this->load->view('common/navbar');
                             </div>
                         </div>
                     </div>
-                <?php } ?>
+                <?php }
+				echo $this->pagination->create_links();
+				 ?>
             </div>
             <!--end block-->
 

@@ -21,6 +21,20 @@ class Postgrad_alumni_model extends CI_Model
 
         return $result = $query->result();
     }
+	public function searchStudent($filterby,$keyword) {
+        $this->db->select("student_id,full_name, p_university_passing_year, email, location");
+        $this->db->from("students");
+		if($filterby == 'name'){
+			$this->db->like('full_name', $keyword);
+		}
+		if($filterby == 'number'){
+			$this->db->like('student_id', $keyword);
+		}
+        $this->db->order_by('student_id','ASC');
+        $query = $this->db->get();
+
+        return $result = $query->result();
+    }
     function selectStudentByYear($a_year, $p_year) {
         $this->db->select('student_id,full_name, p_university_passing_year, email, location');
         $this->db->from("students");

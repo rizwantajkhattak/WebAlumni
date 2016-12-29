@@ -77,7 +77,7 @@ $this->load->view('common/navbar');
                     
 					<div class="input-group col-md-10">
                     
-                                <form class="form-horizontal" role="form" action="<?=base_url();?>search">
+                                <form class="form-horizontal" role="form" method="post" action="<?=base_url();?>search">
                                   <div class="form-group">
                                     <label for="filter">Filter by</label>
                                     <select class="form-control" name="filterby">
