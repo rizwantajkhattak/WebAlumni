@@ -14,6 +14,16 @@ class Home extends CI_Controller
         $data['events'] = $this->home_model->getEvents();
         $this->load->view('home_view', $data);
     }
+	public function about() {
+        $data['news'] = $this->home_model->getNews();
+        $data['events'] = $this->home_model->getEvents();
+        $this->load->view('about_view', $data);
+    }
+	public function faq() {
+        $data['news'] = $this->home_model->getNews();
+        $data['events'] = $this->home_model->getEvents();
+        $this->load->view('faq_view', $data);
+    }
 
 }
 ?>
