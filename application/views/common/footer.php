@@ -10,7 +10,7 @@
                   <li><a href="<?php echo base_url(); ?>home/about">About Us</a></li>
                   <li><a href="<?php echo base_url(); ?>home/faq">FAQ</a></li>
                   <li><a href="#">Site Map</a></li>
-                  <li><a href="#">Privacy & Accessibility</a></li>
+                  <li><a href="<?php echo base_url(); ?>home/privacy">Privacy & Accessibility</a></li>
                 </ul>
               </div>
 
