@@ -20,7 +20,9 @@ class Upload_photo_gallery extends CI_Controller
     public function upload_photo() {
         $config['upload_path'] = 'assets/img/gallery/';
         $config['allowed_types'] = 'jpg|jpeg';
-        $config['max_size']    = '1000';
+        //$config['max_size']    = '1000';
+		//$config['height'] = "500";
+		//$config['width'] = "500";
 
         $this->load->library('upload', $config);
         if (!$this->upload->do_upload('gallery_img'))

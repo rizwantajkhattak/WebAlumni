@@ -22,7 +22,7 @@ $this->load->view('common/navbar');
                 </div>
                 <form role="form" method="post" action="<?=base_url();?>upload_photo_gallery/upload_photo" enctype="multipart/form-data">
                     <div class="form-group col-md-12">
-                        <input type="file" name="gallery_img" id="gallery_img" onchange="readPhotoURL(this);">
+                        <input type="file" name="gallery_img" id="gallery_img" onchange="readPhotoURL(this);" required>
                         <span class="text-danger"><?php if (isset($error)) { echo $error; } ?></span>
                     </div>
                     <div class="form-group col-md-5 col-sm-6">

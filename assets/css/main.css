@@ -293,7 +293,7 @@ nav ul li a:hover {background: #4b85b7 none repeat scroll 0 0;
 }
 .gallery-img {
 	max-width: 100%;
-	cursor: crosshair;
+	cursor: pointer;
 	-webkit-border-radius:3px;
 	-moz-border-radius:3px;
 	border-radius:3px;

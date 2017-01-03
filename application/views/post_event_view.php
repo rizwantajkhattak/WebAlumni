@@ -18,8 +18,13 @@ $this->load->view('common/navbar');
                     </div>
                     <div class="form-group col-md-12">
                         <label>Select event file (.pdf/.doc)</label>
-                        <input type="file" name="event_file_name" id="event_file_name" required>
+                        <input type="file" name="event_file_name" id="event_file_name">
                         <span class="text-danger"><?php if (isset($error)) { echo $error; } ?></span>
+                    </div>
+                    <div class="form-group col-md-12">
+                        
+                        <textarea placeholder="Insert Events text" name="eventtext" class="form-control custom-text" required="required"></textarea>
+                        
                     </div>
                     <div class="form-group col-md-12">
                         <button type="submit" class="btn btn-default custom-text"><i class="glyphicon glyphicon-cloud-upload"></i> Post News</button>
