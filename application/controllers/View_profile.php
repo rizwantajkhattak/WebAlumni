@@ -16,7 +16,7 @@ class View_profile extends CI_Controller
     public function index() {
         $CI = &get_instance();
         $student_id = $CI->session->userdata('username');
-        $data['student'] = $this->view_profile_model->selectStudentById($student_id);
+		$data['student'] = $this->view_profile_model->selectStudentById($student_id);
         $this->load->view('view_profile_view', $data);
     }
 

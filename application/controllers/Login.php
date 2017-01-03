@@ -26,7 +26,6 @@ class Login extends CI_Controller
                 redirect('login');
             }
         }
-
         $this->load->view("login_view");
     }
     public function logout() {

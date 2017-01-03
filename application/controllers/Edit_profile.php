@@ -70,10 +70,10 @@ class Edit_profile extends CI_Controller
     public function update_password() {
         $CI = &get_instance();
         $student_id = $CI->session->userdata('username');
-        $old_password=$this->input->post('old_password');
+        $old_password=sha1($this->input->post('old_password'));
         $result =$this->edit_profile_model->verify_password($student_id, $old_password);
         if(!empty($result)){
-            $new_password=$this->input->post('new_password');
+            $new_password=sha1($this->input->post('new_password'));
             $data = array(
                 //'password' => md5($new_password),
                 'password' => $new_password,

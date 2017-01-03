@@ -8,13 +8,13 @@ $this->load->view('common/navbar');
             <div class="panel panel-success">
                 <div class="panel-heading"><strong><i class="glyphicon glyphicon-wrench"></i> Edit Profile</strong></div>
                 <div class="panel-body light-green">
-                    <p><a href="<?=base_url();?>index.php/view_profile"><i class="glyphicon glyphicon-search"></i> View Profile</a></p>
-                    <p><a href="<?=base_url();?>index.php/edit_profile/password"><i class="glyphicon glyphicon-pencil"></i> Change Password</a></p>
-                    <p><a href="<?=base_url();?>index.php/edit_profile/index"><i class="glyphicon glyphicon-pencil"></i> Edit Personal</a></p>
-                    <p><a href="<?=base_url();?>index.php/edit_profile/education"><i class="glyphicon glyphicon-pencil"></i> Edit Education</a></p>
-                    <p><a href="<?=base_url();?>index.php/edit_profile/biography"><i class="glyphicon glyphicon-pencil"></i> Edit Biography</a></p>
-                    <p><a href="<?=base_url();?>index.php/edit_profile/employment"><i class="glyphicon glyphicon-pencil"></i> <b>Edit Employment</b></a></p>
-                    <p><a href="<?=base_url();?>index.php/edit_profile/photograph"><i class="glyphicon glyphicon-pencil"></i> Edit Photograph</a></p>
+                    <p><a href="<?=base_url();?>view_profile"><i class="glyphicon glyphicon-search"></i> View Profile</a></p>
+                    <p><a href="<?=base_url();?>edit_profile/password"><i class="glyphicon glyphicon-pencil"></i> Change Password</a></p>
+                    <p><a href="<?=base_url();?>edit_profile/index"><i class="glyphicon glyphicon-pencil"></i> Edit Personal</a></p>
+                    <p><a href="<?=base_url();?>edit_profile/education"><i class="glyphicon glyphicon-pencil"></i> Edit Education</a></p>
+                    <p><a href="<?=base_url();?>edit_profile/biography"><i class="glyphicon glyphicon-pencil"></i> Edit Biography</a></p>
+                    <p><a href="<?=base_url();?>edit_profile/employment"><i class="glyphicon glyphicon-pencil"></i> <b>Edit Employment</b></a></p>
+                    <p><a href="<?=base_url();?>edit_profile/photograph"><i class="glyphicon glyphicon-pencil"></i> Edit Photograph</a></p>
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@ $this->load->view('common/navbar');
                 <h2 class="col-lg-12">Edit Employment</h2>
                 <br>
                 <br>
-                <form role="form" method="post" action="<?=base_url();?>index.php/edit_profile/update_employment">
+                <form role="form" method="post" action="<?=base_url();?>edit_profile/update_employment">
                     <div class="form-group col-md-6">
                         <label for="designation">Your designation *</label>
                         <input type="text" class="form-control custom-text" name="designation" id="designation" placeholder="Your designation *" value="<?php echo $s_employment[0]->designation;?>" required>
