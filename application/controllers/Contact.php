@@ -40,9 +40,19 @@ class Contact extends CI_Controller
             $from_email = $this->input->post('email');
             $subject = $this->input->post('subject');
             $message = $this->input->post('message');
+			//
+			$lastname = $this->input->post('lastname');
+			$number = $this->input->post('number');
+			$company = $this->input->post('company');
+			$address = $this->input->post('address');
+			$addresstwo = $this->input->post('addresstwo');
+			$city = $this->input->post('city');
+			$postcode = $this->input->post('postcode');
+			$country_id = $this->input->post('country_id');
+			
 
             //set to_email id to which you want to receive mails
-            $to_email = 'alumni@ugrad.cse.buet.ac.bd';
+            $to_email = 'rizwantajkhattak@hotmail.com';
 
             //configure email settings
             $config['protocol'] = 'smtp';
@@ -56,12 +66,30 @@ class Contact extends CI_Controller
             $config['newline'] = "\r\n"; //use double quotes
             //$this->load->library('email', $config);
             $this->email->initialize($config);
-
+			//
+			$emailContent  = 	"First Name : " .$name ."<br >
+			Last Name : " .$lastname ."<br >
+			Email : ". $from_email ."<br >
+			Phone : ". $number ."<br >
+			Company : ". $company ."<br >
+			Address : ". $address ."<br >
+			Address II : " .$addresstwo ."<br >
+			City : " .$city ."<br >
+			Postcode : " .$postcode ."<br >
+			Country : " .$country_id ."<br >
+			Subject : " .$subject ."<br >
+			Message : ".$message;
+			//
+			
+			
+			
+			
+			
             //send mail
             $this->email->from($from_email, $name);
             $this->email->to($to_email);
             $this->email->subject($subject);
-            $this->email->message($message);
+            $this->email->message($emailContent);
             if ($this->email->send())
             {
                 // mail sent

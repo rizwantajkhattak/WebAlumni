@@ -9,7 +9,7 @@ $this->load->view('common/navbar');
             <br>
             <div class="row">
             <h2 class="contact-subheading">Your Personal Detail</h2>
-                <form role="form" method="post" action="<?=base_url();?>index.php/contact/contact_form">
+                <form role="form" method="post" action="<?=base_url();?>contact/contact_form">
                     <div class="form-group col-md-6">
                         <input type="text" class="form-control custom-text" name="name" id="name" placeholder="Your Name *" required>
                     </div>

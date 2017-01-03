@@ -17,6 +17,13 @@ class Events_model extends CI_Model
 
         return $result = $query->result();
     }
+	public function getEventsById($id) {
+        $this->db->select("*");
+        $this->db->from("alumni_events");
+        $this->db->where('id',$id);
+        $query = $this->db->get();
+        return $result = $query->result();
+    }
 
 
     function __destruct() {

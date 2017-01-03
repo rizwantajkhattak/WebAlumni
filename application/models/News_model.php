@@ -17,6 +17,13 @@ class News_model extends CI_Model
 
         return $result = $query->result();
     }
+	public function getNewsById($id) {
+        $this->db->select("*");
+        $this->db->from("alumni_news");
+        $this->db->where('id',$id);
+        $query = $this->db->get();
+        return $result = $query->result();
+    }
 
 
     function __destruct() {
