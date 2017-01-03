@@ -14,9 +14,18 @@ class Contact extends CI_Controller
     public function contact_form(){
         //set validation rules
         $this->form_validation->set_rules('name', 'Name', 'trim|required|xss_clean|callback_alpha_space_only');
+		$this->form_validation->set_rules('lastname', 'Last Name', 'trim|required|xss_clean|callback_alpha_space_only');
         $this->form_validation->set_rules('email', 'Emaid ID', 'trim|required|valid_email');
-        $this->form_validation->set_rules('subject', 'Subject', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('message', 'Message', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('number', 'Number', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('company', 'Company', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('address', 'Address', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('addresstwo', 'Address Line Two', 'trim|xss_clean');
+		$this->form_validation->set_rules('city', 'City', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('postcode', 'Post Code', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('country_id', 'Country Name', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('company', 'Company', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('subject', 'Subject', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('message', 'Message', 'trim|required|xss_clean');
 
         //run validation on form input
         if ($this->form_validation->run() == FALSE)
